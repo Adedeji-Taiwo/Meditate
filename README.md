@@ -1,50 +1,204 @@
-# Welcome to your Expo app 👋
+Mindful Moments - Meditation App
+======================================
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautiful and serene meditation mobile application built with React Native and Expo Router. This app provides users with a peaceful environment to practice mindfulness and meditation through guided audio sessions and affirmations.
 
-## Get started
+Features
+----------
 
-1. Install dependencies
+*   **Guided Meditations**: Multiple meditation sessions with nature themes
+    
+*   **Beautiful UI**: Clean, calming interface with gradient backgrounds
+    
+*   **Audio Integration**: High-quality meditation audio playback
+    
+*   **Cross-Platform**: Works on both iOS and Android devices
+    
+*   **File-based Routing**: Seamless navigation using Expo Router
+    
+*   **Affirmations**: Positive daily affirmations to boost mindfulness
+    
+*   **Nature Themes**: Various meditation environments (mountains, rivers, beaches, etc.)
+    
 
-   ```bash
-   npm install
-   ```
+Getting Started
+------------------
 
-2. Start the app
+### Prerequisites
 
-   ```bash
-   npx expo start
-   ```
+*   Node.js (v16 or higher)
+    
+*   npm or yarn
+    
+*   Expo CLI
+    
+*   iOS Simulator or Android Emulator (optional)
+    
 
-In the output, you'll find options to open the app in a
+### Installation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1.  Clone the repository:
+    
+`   git clone https://github.com/yourusername/meditation-app.git  cd meditation-app   `
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  Install dependencies:
+    
+`   npm install  # or  yarn install   `
 
-## Get a fresh project
+1.  Start the development server:
+    
+`   npx expo start   `
 
-When you're ready, run:
+1.  Run on your preferred platform:
+    
+    *   Press i for iOS Simulator
+        
+    *   Press a for Android Emulator
+        
+    *   Scan QR code with Expo Go app on your device
+        
 
-```bash
-npm run reset-project
-```
+Tech Stack
+--------------
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+*   **React Native**: Cross-platform mobile development
+    
+*   **Expo**: Development platform and toolchain
+    
+*   **TypeScript**: Type-safe JavaScript
+    
+*   **Expo Router**: File-based navigation system
+    
+*   **NativeWind**: Tailwind CSS for React Native
+    
+*   **Expo Linear Gradient**: Beautiful gradient backgrounds
+    
+*   **Expo AV**: Audio playback functionality
+    
 
-## Learn more
+App Structure
+----------------
 
-To learn more about developing your project with Expo, look at the following resources:
+`   app/  ├── (tabs)/  │   ├── nature-meditate.tsx    # Main meditation screen  │   └── affirmations/  │       └── [itemId].tsx       # Individual affirmation screen  ├── meditate/  │   └── [id].tsx              # Meditation player screen  ├── _layout.tsx               # Root layout  └── index.tsx                 # Home/Welcome screen  assets/  ├── audio/                    # Meditation audio files  ├── images/                   # App images and backgrounds  └── meditation-images/        # Meditation category images   `
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Key Screens
+--------------
 
-## Join the community
+### Welcome Screen
 
-Join our community of developers creating universal apps.
+*   Onboarding experience with gradient background
+    
+*   Introduction to the app's features
+    
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Meditation Library
+
+*   Grid layout of meditation categories
+    
+*   Beautiful imagery for each meditation type
+    
+*   Easy navigation to individual sessions
+    
+
+### Meditation Player
+
+*   Audio playback controls
+    
+*   Progress tracking
+    
+*   Immersive full-screen experience
+    
+
+### Affirmations
+
+*   Daily positive affirmations
+    
+*   Swipeable interface
+    
+*   Encourages mindful thinking
+    
+
+Audio Features
+-----------------
+
+The app includes various nature-themed meditation audio tracks:
+
+*   Forest sounds
+    
+*   Ocean waves
+    
+*   Mountain ambiance
+    
+*   River flowing
+    
+*   Starry night atmosphere
+    
+*   Waterfall meditation
+    
+
+Development
+---------------
+
+### Running Tests
+
+`   npm test   `
+
+### Building for Production
+
+`   # For Android  npx expo build:android  # For iOS  npx expo build:ios   `
+
+### Environment Setup
+
+Create a .env file in the root directory:
+
+`   EXPO_PUBLIC_API_URL=your_api_url_here   `
+
+Scripts
+----------
+
+*   npm start: Start the Expo development server
+    
+*   npm run android: Run on Android emulator
+    
+*   npm run ios: Run on iOS simulator
+    
+*   npm run web: Run on web browser
+    
+
+Contributing
+---------------
+
+1.  Fork the repository
+    
+2.  Create your feature branch (git checkout -b feature/amazing-feature)
+    
+3.  Commit your changes (git commit -m 'Add some amazing feature')
+    
+4.  Push to the branch (git push origin feature/amazing-feature)
+    
+5.  Open a Pull Request
+    
+
+License
+----------
+
+This project is licensed under the MIT License - see the [LICENSE](https://claude.ai/chat/LICENSE) file for details.
+
+Acknowledgments
+------------------
+
+*   Icons provided by Expo Vector Icons
+    
+*   Nature sounds sourced from royalty-free audio libraries
+    
+*   Meditation imagery from Unsplash contributors
+    
+*   Inspiration from mindfulness and meditation practices
+    
+
+Support
+----------
+
+If you have any questions or need help, please open an issue in the GitHub repository.
+
+**Start your mindfulness journey today! 🧘‍♂️✨**

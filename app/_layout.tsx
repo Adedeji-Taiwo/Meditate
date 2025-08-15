@@ -1,29 +1,54 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import TimerProvider from "@/context/TimerContext";
+import { useFonts } from "expo-font";
+import { SplashScreen, Stack } from 'expo-router';
+import React, { useEffect } from 'react';
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+// this will prevent the flash screen from auto hiding until loading all the assets is complete
+SplashScreen.preventAutoHideAsync();
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+export default function _layout() {
+   const [fontsLoaded, error] = useFonts({
+        "Roboto-Mono": require("../assets/fonts/RobotoMono-Regular.ttf"),
+    });
 
+       useEffect(() => {
+        if (error) throw error;
+        if (fontsLoaded) SplashScreen.hideAsync();
+          }, [fontsLoaded, error]);
+
+          if (!fontsLoaded) {
+              return null;
+          }
+
+          if (!fontsLoaded && !error) {
+              return null;
+          }
+    
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+     <SafeAreaProvider>
+         <TimerProvider>
+       <Stack>
+       <Stack.Screen 
+        name="index" 
+        options={{ headerShown: false }} 
+      />
+      <Stack.Screen 
+        name="(tabs)" 
+        options={{ headerShown: false }} 
+      />
+      <Stack.Screen 
+        name="meditate/[id]" 
+        options={{ headerShown: false }} 
+      />
+      <Stack.Screen 
+        name="(modal)/adjust-meditation-duration" 
+        options={{ headerShown: false, presentation: 'modal' }} 
+      />
+    </Stack>
+   </TimerProvider>
+     </SafeAreaProvider>
+  
+  )
 }
