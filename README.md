@@ -76,11 +76,6 @@ Tech Stack
 *   **Expo AV**: Audio playback functionality
     
 
-App Structure
-----------------
-
-`   app/  ├── (tabs)/  │   ├── nature-meditate.tsx    # Main meditation screen  │   └── affirmations/  │       └── [itemId].tsx       # Individual affirmation screen  ├── meditate/  │   └── [id].tsx              # Meditation player screen  ├── _layout.tsx               # Root layout  └── index.tsx                 # Home/Welcome screen  assets/  ├── audio/                    # Meditation audio files  ├── images/                   # App images and backgrounds  └── meditation-images/        # Meditation category images   `
-
 Key Screens
 --------------
 
